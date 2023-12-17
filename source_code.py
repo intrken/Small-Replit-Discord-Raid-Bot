@@ -63,7 +63,9 @@ async def on_message(message):
                  await member.kick()
       elif message.content == '!bot allowedusers':
         allowed_users_mentions = '\n'.join([f'<@{user}>' for user in allowed_users])
-        await message.channel.send(f'Allowed users:\n{allowed_users_mentions}')
+        embed = discord.message.Embed(title="Allowed Users", 
+description=allowed_users_mentions, color=0x00ff00)
+        await message.channel.send(embed=embed)
       elif message.content == '!bot config':
         embed = discord.message.Embed(title="Bot Commands", description="List of available commands and their descriptions", color=0x00ff00)
         command_desc = {

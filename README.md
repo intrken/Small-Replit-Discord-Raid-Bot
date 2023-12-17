@@ -5,7 +5,7 @@ How to use:
 3. Click "python discord bot" on the search bar and hit  "+ Create Repl"
 4. If it says "Configure missing Secret values" click Dismiss
 5. Delete everything in the script "main.py"
-6. Paste the source code into main.py
+6. Paste the [source code](https://github.com/intrken/Small-Replit-Discord-Raid-Bot/blob/main/source_code.py) into main.py
 7. Add a tab called "Shell" if its not there, and on the shell tab, paste "pip install discord" or "pip install discord.py"
 # Creating a Discord Bot
 Now you have to create your discord bot

@@ -20,8 +20,8 @@ If you already know how to make a bot and get its token, you can skip this part
 8. Now go on Oauth2/URL Generator. On scopes select "bot" and on Bot Permissions select "Administrator"
 9. Now back on replit, on line 67 on main.py where it says "client.run('YOUR_BOT_TOKEN')" replace YOUR_BOT_TOKEN with the token you copied. If it says "The value you pasted looks like a secret.
 Store it securely using our Secrets feature." then press the Enter Key
-10. On line 7, replace YOUR_USER_ID with your user id
-11. On line 9, replace YOUR_USER_ID with your user id, you cant also replace the other user id's with people you allow to use the bot or remove them
+10. On line 6, replace YOUR_USER_ID with your user id
+11. On line 7, replace YOUR_USER_ID with your user id and replace YOUR_BOT_USER_ID with your bot user id. To get a bot user id, go on your bot and copy the number on the search bar (https://discord.com/developers/applications/YOUR_BOT_USER_ID/bot)
 12. Now go on back on your Bot and go on Oauth2/URL Generator. On scopes select "bot" and on Bot Permissions select "Administrator". Open the link on Generated URL and add the bot to your server
 13. Upon adding your bot, go back to your repl and click run. Your Bot should go online and your done
 # Commands

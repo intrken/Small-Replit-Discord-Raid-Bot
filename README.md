@@ -17,12 +17,13 @@ If you already know how to make a bot and get its token, you can skip this part
 5. Customise your bot in general information
 6. Go on Bot , change the username to what you want and press "Reset Token" and copy your token
 7. Now scroll down till you see **Privileged Gateway Intents** and put PRESENCE INTENT, SERVER MEMBERS INTENT and MESSAGE CONTENT INTENT to yes
-8. Now back on replit, on line 67 on main.py where it says "client.run('YOUR_BOT_TOKEN')" replace YOUR_BOT_TOKEN with the token you copied. If it says "The value you pasted looks like a secret.
+8. Now go on Oauth2/URL Generator. On scopes select "bot" and on Bot Permissions select "Administrator"
+9. Now back on replit, on line 67 on main.py where it says "client.run('YOUR_BOT_TOKEN')" replace YOUR_BOT_TOKEN with the token you copied. If it says "The value you pasted looks like a secret.
 Store it securely using our Secrets feature." then press the Enter Key
-9. On line 7, replace YOUR_USER_ID with your user id
-10. On line 9, replace YOUR_USER_ID with your user id, you cant also replace the other user id's with people you allow to use the bot or remove them
-11. And your done! Now press run and click the authorization link on the "console" tab
-12. Add the bot to the server you want and your done
+10. On line 7, replace YOUR_USER_ID with your user id
+11. On line 9, replace YOUR_USER_ID with your user id, you cant also replace the other user id's with people you allow to use the bot or remove them
+12. Now go on back on your Bot and go on Oauth2/URL Generator. On scopes select "bot" and on Bot Permissions select "Administrator". Open the link on Generated URL and add the bot to your server
+13. Upon adding your bot, go back to your repl and click run. Your Bot should go online and your done
 # Commands
 !bot deletechn': 'Deletes all channels in the server',
 '!bot deletesrv': 'Deletes the entire server',

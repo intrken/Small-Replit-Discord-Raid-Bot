@@ -15,7 +15,7 @@ If you already know how to make a bot and get its token, you can skip this part
 3. Upon signing in, a button on the top right of your screen should say "New Application", click it
 4. Something should pop up called create an application. Choose your Bot's name and agree to the discord developer TOS and press Create
 5. Customise your bot in general information
-6. Go on Bot and press "Reset Token" and copy your token
+6. Go on Bot , change the username to what you want and press "Reset Token" and copy your token
 7. Now scroll down till you see **Privileged Gateway Intents** and put PRESENCE INTENT, SERVER MEMBERS INTENT and MESSAGE CONTENT INTENT to yes
 8. Now back on replit, on line 67 on main.py where it says "client.run('YOUR_BOT_TOKEN')" replace YOUR_BOT_TOKEN with the token you copied
 9. On line 7, replace YOUR_USER_ID with your user id

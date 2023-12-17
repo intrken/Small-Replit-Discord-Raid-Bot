@@ -53,7 +53,7 @@ async def on_message(message):
         await message.channel.send('Please provide a message to spam')
       elif message.content == '!bot':
         await message.channel.send("")
-      elif message.content == '!animebot help':
+      elif message.content == '!bot help':
         await message.channel.send('figure out urself')
       elif message.content == '!bot ban all':
         for guild in client.guilds:

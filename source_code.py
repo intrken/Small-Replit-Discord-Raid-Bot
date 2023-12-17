@@ -24,22 +24,28 @@ async def on_message(message):
         await message.guild.delete()
       elif (message.content.startswith('!bot adduser')
        and str(message.author.id) == god_user):
-        splits_message = message.content.split(' ')
-        user_id = " ".join(splits_message[2:])
-        allowed_users.append(user_id)
-        await message.channel.send(f'User <@{user_id}> has been added to the allowed users list.')
+        if len(message.content) > 12:
+         splits_message = message.content.split(' ')
+         user_id = " ".join(splits_message[2:])
+         allowed_users.append(user_id)
+         await message.channel.send(f'User <@{user_id}> has been added to the allowed users list.')
+        else:
+          await message.channel.send('Provide a user ID to add.') 
       elif (message.content.startswith('!bot removeuser')
          and str(message.author.id) == '798629431325360128'):
-          splited_message = message.content.split(' ')
-          user_id = " ".join(splited_message[2:])
-          if user_id in allowed_users:
-            allowed_users.remove(user_id)
-            user = client.get_user(int(user_id))
-            await message.channel.send(f'User <@{user_id}> has been removed from the allowed users list.')
+          if len(message.content) > 14:
+           splited_message = message.content.split(' ')
+           user_id = " ".join(splited_message[2:])
+           if user_id in allowed_users:
+             allowed_users.remove(user_id)
+             user = client.get_user(int(user_id))
+             await message.channel.send(f'User <@{user_id}> has been removed from the allowed users list.')
+          else:
+           await message.channel.send('Provide a user ID to remove.')  
       elif message.content.startswith('!bot spam'):
        spam = True
        split_message = message.content.split(' ')
-       if len(message.content) > 13:
+       if len(message.content) > 9:
         spam_message = " ".join(split_message[2:])
         while spam is True:
           await message.channel.send(spam_message)

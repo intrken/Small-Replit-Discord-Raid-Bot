@@ -3,20 +3,10 @@ import discord
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
 
-
 god_user = 'YOUR_USER_ID'
-allowed_users = [
-'YOUR_USER_ID'
-, 'USER_ID', # Remove this if you dont need it
-'USER_ID', # Remove this if you dont need it
-'USER_ID', # Remove this if you dont need it
-str(client.user.id) # Don't touch this
-]
+allowed_users = ['YOUR_USER_ID', 'YOUR_BOT_USER_ID'] # You can add more ID's
 
-@client.event
-async def on_ready():
-  print(f'https://discord.com/api/oauth2/authorize?client_id={client.user.id}&permissions=8&scope=bot')
-  print('Bot is ready')
+
 
 @client.event
 async def on_message(message):

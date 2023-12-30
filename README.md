@@ -33,3 +33,5 @@ Store it securely using our Secrets feature." then press the Enter Key
 '!bot ban all': 'Bans all members from the server except allowed users',
 '!bot kick all': 'Kicks all members from the server except allowed users',
 '!bot evildeed': 'Nukes the server'
+# UPDATE
+This code may not work till i update it

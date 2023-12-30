@@ -23,7 +23,7 @@ Store it securely using our Secrets feature." then press the Enter Key
 10. On line 6, replace YOUR_USER_ID with your user id
 11. On line 7, replace YOUR_USER_ID with your user id and replace YOUR_BOT_USER_ID with your bot user id. To get a bot user id, go on your bot and copy the number on the search bar (https://discord.com/developers/applications/YOUR_BOT_USER_ID/bot). You can also add more user ids to the allowed_users to make someone allowed to use your bot
 12. Now go on back on your Bot and go on Oauth2/URL Generator. On scopes select "bot" and on Bot Permissions select "Administrator". Open the link on Generated URL and add the bot to your server
-13. Upon adding your bot, go back to your repl and click run. Your Bot should go online and your done
+13. Upon adding your bot, go back to your repl and click run. Your Bot should go online and your done. Make sure to also configure your script such as the spam_message or spam_channel_name in !bot evildeed
 # Commands
 !bot deletechn': 'Deletes all channels in the server',
 '!bot deletesrv': 'Deletes the entire server',

@@ -3,7 +3,7 @@ import asyncio
 
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
-YOUR_BOT_TOKEN = "YOUR_BOT_USER_ID"
+YOUR_BOT_TOKEN = "YOUR_BOT_TOKEN"
 god_user = 'YOUR_USER_ID'
 allowed_users = ['YOUR_USER_ID', 'YOUR_BOT_USER_ID'] # You can add more ID's
 stat = ""
